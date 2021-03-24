@@ -130,6 +130,29 @@ public class Clinic {
 		else
 			return false;
 	}
+	
+	
+	public ArrayList<User> getClinicDoktorList(int clinic_id) throws SQLException {
+		ArrayList<User> list = new ArrayList<>();
+		User obj;
+		try {
+			Connection con = conn.connDb();
+			st = con.createStatement();
+			rs = st.executeQuery(
+					"SELECT u.id,u.tcno,u.type,u.name,u.password FROM worker w LEFT JOIN user u ON w.user_id =u.id WHERE clinic_id ="
+							+ clinic_id);
+			while (rs.next()) {
+				obj = new User(rs.getInt("u.id"), rs.getString("u.tcno"), rs.getString("u.name"),
+						rs.getString("u.password"), rs.getString("u.type"));
+				list.add(obj);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	
 
 	public int getId() {
 		return id;

@@ -22,6 +22,9 @@ public class Helper {
 		case "success":
 			msg = "Ýþlem baþarýlý";
 			break;
+		case "error":
+			msg="Bir hata gerçekleþti";
+			break;
 		default:
 			msg = str;
 

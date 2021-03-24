@@ -122,7 +122,7 @@ public class Bashekim extends User {
 	}
 
 	public boolean addWorker(int user_id, int clinic_id) throws SQLException {
-		String query = "INSERT INTO worker" + "(user_id,clinic_id) VALUES " + "(?,?)";
+		String query = "INSERT INTO worker" + "(user_id, clinic_id) VALUES " + "(?,?)";
 		boolean key = false;
 		int count = 0;
 		try {

@@ -120,7 +120,7 @@ public class BashekimGUI extends JFrame {
 		workerModel.setColumnIdentifiers(colWorker);
 		Object[] workerData = new Object[2];
 
-		setTitle("Hastane Y\u00F6netim Sistemi");
+		setTitle("Hastane Yönetim Sistemi");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 520);
 		contentPane = new JPanel();
@@ -134,9 +134,16 @@ public class BashekimGUI extends JFrame {
 		lblNewLabel.setBounds(20, 20, 350, 20);
 		contentPane.add(lblNewLabel);
 
-		JButton btnNewButton = new JButton("\u00C7\u0131k\u0131\u015F Yap");
+		JButton btnNewButton = new JButton("Çýkýþ Yap");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginGUI login=new LoginGUI();
+				login.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 15));
-		btnNewButton.setBounds(605, 10, 110, 25);
+		btnNewButton.setBounds(615, 20, 110, 25);
 		contentPane.add(btnNewButton);
 
 		JTabbedPane w_tab = new JTabbedPane(JTabbedPane.TOP);
